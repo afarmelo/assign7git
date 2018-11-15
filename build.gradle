@@ -1,0 +1,43 @@
+apply plugin: 'application'
+apply plugin: 'checkstyle'
+apply plugin: 'java'
+
+plugins {
+  id "com.github.spotbugs" version "1.6.5"
+}
+
+mainClassName = 'src.java.builder.main'
+mainClassName = 'src.java.decorator.main'
+mainClassName = 'src.java.mediator.main'
+mainClassName = 'src.java.singleton.main'
+
+repositories {
+  mavenCentral()
+}
+
+checkstyle {
+  ignoreFailures = true
+  showViolations = false
+}
+
+tasks.withType(Checkstyle) {
+  reports {
+    html.enabled = true
+    xml.enabled = false
+  }
+}
+checkstyle {
+    toolVersion = "8.8"
+}
+
+spotbugs {
+  toolVersion = '3.1.1'
+  ignoreFailures = true
+}
+
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
+  reports {
+    xml.enabled = false
+    html.enabled = true
+  }
+}
