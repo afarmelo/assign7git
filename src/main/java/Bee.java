@@ -9,9 +9,14 @@ package main.java;
  */
 public class Bee {
 
-    private BeeSpecies species;
+    private BeeSpecies _species;
+    private boolean _isQueen;
     
-    public Bee() {
-        
+    public Bee(BeeSpecies species) {
+        _species = species;
+    }
+    
+    public void makeQueen(boolean queen) {
+        _isQueen = queen;
     }
 }
