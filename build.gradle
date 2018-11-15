@@ -6,6 +6,7 @@ apply plugin: 'application'
 mainClassName = 'main.java.Main'
 
 // jar task comes from 'java' plugin
+// jar automatically created via build or assemble
 jar {
   manifest {
     attributes 'Main-Class': 'main.java.Main'
