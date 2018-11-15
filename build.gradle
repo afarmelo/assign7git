@@ -1,10 +1,10 @@
-apply plugin: 'application'
-apply plugin: 'checkstyle'
-apply plugin: 'java'
-
 plugins {
   id "com.github.spotbugs" version "1.6.5"
 }
+
+apply plugin: 'application'
+apply plugin: 'checkstyle'
+apply plugin: 'java'
 
 mainClassName = 'src.java.builder.main'
 mainClassName = 'src.java.decorator.main'
