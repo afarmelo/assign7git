@@ -7,16 +7,11 @@ package main.java;
  * @version 0.1
  *
  */
-public class Bee {
-
-    private BeeSpecies _species;
-    private boolean _isQueen;
-    
-    public Bee(BeeSpecies species) {
-        _species = species;
-    }
-    
-    public void makeQueen(boolean queen) {
-        _isQueen = queen;
-    }
+public abstract class Bee {
+    public abstract BeeSpecies getSpecies();
+    public abstract int harvestSpeed();
+    public abstract int restTime();
+    public abstract int damage();
+    public abstract int health();
+    public abstract int discount();
 }
