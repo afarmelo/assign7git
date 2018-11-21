@@ -1,6 +1,6 @@
 package main.java.singleton;
 /**
- * ApiaryMain is the entry point into the Apiary class, Singleton pattern
+ * SingletonMain is the entry point into the Singleton pattern
  * @author Adam Farmelo
  *
  */

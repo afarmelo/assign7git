@@ -1,6 +1,6 @@
 package main.java.builder;
 /**
- * BuilderMain is the entry point into the Beehive class, builder pattern
+ * BuilderMain is the entry point into the builder pattern
  * @author Adam Farmelo
  *
  */
