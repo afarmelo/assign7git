@@ -4,7 +4,7 @@ package main.java.singleton;
  * @author Adam Farmelo
  *
  */
-public class ApiaryMain {
+public class SingletonMain {
 
     /**
      * main method for Apiary class

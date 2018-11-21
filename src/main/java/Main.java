@@ -1,5 +1,5 @@
 package main.java;
-import main.java.singleton.ApiaryMain;
+import main.java.singleton.SingletonMain;
 /**
  * Here is the entry point into the Design Patterns assignment.
  * 
@@ -13,6 +13,6 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("Hello from Main!");
-        ApiaryMain.main(args);
+        SingletonMain.main(args);
     }
 }
