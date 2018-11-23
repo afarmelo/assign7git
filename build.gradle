@@ -1,29 +1,37 @@
+// SPOTBUGS PLUGIN
+plugins {
+  id "com.github.spotbugs" version "1.6.5"
+}
+
 /* applying application plugin implicitly applies Java and Distribution plugins
  * java plugin adds the jar task, whose manifest property needs to be set
  *
  */
 apply plugin: 'application'
-apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
 
+// MAIN CLASS
 mainClassName = 'main.java.Main'
 
-// Repositories
+// REPOSITORIES
 repositories {
-  mavenLocal()
   mavenCentral()
-  jcenter()
 }
 
-// jar task comes from 'java' plugin
-// jar automatically created via build or assemble
+// JAR task comes from 'java' plugin
+// automatically created via build or assemble
 jar {
   manifest {
     attributes 'Main-Class': 'main.java.Main'
   }
 }
 
+// TEST JUnit
+test {
+  failFast true
+}
+
 // CHECKSTYLE has two tasks checkstyleMain and checkstyleTest
+apply plugin: 'checkstyle'
 checkstyle {
   ignoreFailures = true
   showViolations = false
@@ -37,16 +45,19 @@ tasks.withType(Checkstyle) {
   }
 }
 
-// FINDBUGS has two tasks findbugsMain and findbugsTest
-findbugs {
+// SPOTBUGS
+spotbugs {
+  toolVersion = '3.1.1'
   ignoreFailures = true
-  toolVersion = "3.0.1"
-  effort = "max"
 }
 
-tasks.withType(FindBugs) {
+tasks.withType(com.github.spotbugs.SpotBugsTask) {
   reports {
     xml.enabled false
     html.enabled true
   }
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
 }
