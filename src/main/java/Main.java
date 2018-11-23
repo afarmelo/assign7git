@@ -1,4 +1,6 @@
 package main.java;
+import main.java.builder.BuilderMain;
+import main.java.decorator.DecoratorMain;
 import main.java.singleton.SingletonMain;
 /**
  * Here is the entry point into the Design Patterns assignment.
@@ -13,6 +15,8 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("Hello from Main!");
-        SingletonMain.main(args);
+        SingletonMain.main();
+        BuilderMain.main();
+        DecoratorMain.main();
     }
 }

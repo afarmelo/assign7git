@@ -6,7 +6,7 @@ package main.java.decorator;
  */
 public class DecoratorMain {
 
-    public static void main(String[] args) {
+    public static void main() {
         // Create some bees
         // Create some decorators
         // add the bees to the decorators

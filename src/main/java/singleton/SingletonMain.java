@@ -10,7 +10,7 @@ public class SingletonMain {
      * main method for Apiary class
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main() {
         System.out.println("Hello from Apiary!");
     }
 
