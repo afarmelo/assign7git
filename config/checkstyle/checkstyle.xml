@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!-- This is a checkstyle configuration file. For descriptions of
+what the following rules do, please see the checkstyle configuration
+page at http://checkstyle.sourceforge.net/config.html -->
+
+<module name="Checker">
+
+  <module name="FileTabCharacter">
+    <!-- Checks that there are no tab characters in the file.
+    -->
+  </module>
+
+  <module name="NewlineAtEndOfFile">
+    <property name="lineSeparator" value="lf"/>
+  </module>
+
+  <module name="RegexpSingleline">
+    <!-- Checks that FIXME is not used in comments.  TODO is preferred.
+    -->
+    <property name="format" value="((//.*)|(\*.*))FIXME" />
+    <property name="message" value='TODO is preferred to FIXME.  e.g. "TODO(johndoe): Refactor when v2 is released."' />
+  </module>
+
+  <module name="RegexpSingleline">
+    <!-- Checks that TODOs are named.  (Actually, just that they are followed
+         by an open paren.)
+    -->
+    <property name="format" value="((//.*)|(\*.*))TODO[^(]" />
+    <property name="message" value='All TODOs should be named.  e.g. "TODO(johndoe): Refactor when v2 is released."' />
+  </module>
+
+  <module name="JavadocPackage">
+    <!-- Checks that each Java package has a Javadoc file used for commenting.
+      Only allows a package-info.java, not package.html. -->
+  </module>
+
+  <!-- All Java AST specific tests live under TreeWalker module. -->
+  <module name="TreeWalker">
+
+    <!--
+
+    IMPORT CHECKS
