@@ -1,12 +1,15 @@
-package main.java.decorator;
+package main.java.prototype;
 
-import main.java.Bee;
 import main.java.BeeSpecies;
 
 public class Robot extends Bee{
 
+    public Robot() {
+        _species = BeeSpecies.ROBOT;
+    }
+    
     @Override
-    public BeeSpecies getSpecies() {
-        return BeeSpecies.ROBOT;
+    public void fight(Bee other) {
+        
     }
 }

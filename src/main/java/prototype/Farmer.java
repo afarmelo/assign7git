@@ -1,13 +1,16 @@
-package main.java.decorator;
+package main.java.prototype;
 
-import main.java.Bee;
 import main.java.BeeSpecies;
 
 public class Farmer extends Bee{
     
+    public Farmer() {
+        _species = BeeSpecies.FARMER;
+    }
+    
     @Override
-    public BeeSpecies getSpecies() {
-        return BeeSpecies.FARMER;
+    public void fight(Bee other) {
+        
     }
 }
 

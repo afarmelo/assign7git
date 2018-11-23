@@ -1,12 +1,15 @@
-package main.java.decorator;
+package main.java.prototype;
 
-import main.java.Bee;
 import main.java.BeeSpecies;
 
 public class Trader extends Bee{
 
+    public Trader() {
+        _species = BeeSpecies.TRADER;
+    }
+    
     @Override
-    public BeeSpecies getSpecies() {
-        return BeeSpecies.TRADER;
+    public void fight(Bee other) {
+        
     }
 }
