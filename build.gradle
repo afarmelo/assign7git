@@ -3,12 +3,50 @@
  *
  */
 apply plugin: 'application'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+
 mainClassName = 'main.java.Main'
+
+// Repositories
+repositories {
+  mavenLocal()
+  mavenCentral()
+  jcenter()
+}
 
 // jar task comes from 'java' plugin
 // jar automatically created via build or assemble
 jar {
   manifest {
     attributes 'Main-Class': 'main.java.Main'
+  }
+}
+
+// CHECKSTYLE has two tasks checkstyleMain and checkstyleTest
+checkstyle {
+  ignoreFailures = true
+  showViolations = false
+  toolVersion = "8.8"
+}
+
+tasks.withType(Checkstyle) {
+  reports {
+    xml.enabled false
+    html.enabled true
+  }
+}
+
+// FINDBUGS has two tasks findbugsMain and findbugsTest
+findbugs {
+  ignoreFailures = true
+  toolVersion = "3.0.1"
+  effort = "max"
+}
+
+tasks.withType(FindBugs) {
+  reports {
+    xml.enabled false
+    html.enabled true
   }
 }
