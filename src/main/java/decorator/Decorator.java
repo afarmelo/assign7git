@@ -1,7 +1,7 @@
 package main.java.decorator;
 
-import main.java.Bee;
 import main.java.BeeSpecies;
+import main.java.prototype.Bee;
 
 public class Decorator extends Bee{
     
@@ -39,5 +39,10 @@ public class Decorator extends Bee{
     @Override
     public int discount() {
         return _bee.discount();
+    }
+    
+    @Override 
+    public void fight(Bee other) {
+        // when a bee kills another bee the winner takes the losers' buffs
     }
 }

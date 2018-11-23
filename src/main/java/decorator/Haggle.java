@@ -1,6 +1,6 @@
 package main.java.decorator;
 
-import main.java.Bee;
+import main.java.prototype.Bee;
 
 public class Haggle extends Decorator{
 
