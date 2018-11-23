@@ -1,7 +1,8 @@
 package main.java.builder;
 
-import main.java.BeeSpecies;
 import main.java.Beehive;
+import main.java.prototype.Bee;
+import main.java.prototype.Warrior;
 
 /**
  * Warrior bees have been trained in the craft of war. They  are 
@@ -23,14 +24,15 @@ public class WarriorBeehiveBuilder extends BeehiveBuilder {
     public void AddRooms() {
         _hive.addRooms(50, 8);
     }
-
+    
     @Override
     public void AddBees() {
-        _hive.addBees(30, BeeSpecies.WARRIOR);
+        Bee warrior = new Warrior();
+        _hive.addBees(30, warrior);
     }
 
     @Override
     public void AddQueen() {
-        _hive.addQueen(BeeSpecies.WARRIOR);
+        _hive.addQueen(new Warrior());
     }
 }

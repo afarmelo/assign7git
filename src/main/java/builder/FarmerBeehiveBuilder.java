@@ -1,7 +1,11 @@
 package main.java.builder;
 
+import java.util.ArrayList;
+
 import main.java.BeeSpecies;
 import main.java.Beehive;
+import main.java.prototype.Bee;
+import main.java.prototype.Farmer;
 
 /**
  * The farmer bees have mastered the art of producing their own resources,
@@ -24,12 +28,13 @@ public class FarmerBeehiveBuilder extends BeehiveBuilder {
 
     @Override
     public void AddBees() {
-        _hive.addBees(30, BeeSpecies.FARMER);
+        Bee farmer = new Farmer();
+        _hive.addBees(30, farmer);
     }
 
     @Override
     public void AddQueen() {
-        _hive.addQueen(BeeSpecies.FARMER);
+        _hive.addQueen(new Farmer());
     }
 
 }

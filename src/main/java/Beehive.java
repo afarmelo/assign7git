@@ -2,6 +2,12 @@ package main.java;
 
 import java.util.ArrayList;
 
+import main.java.prototype.Bee;
+import main.java.prototype.Farmer;
+import main.java.prototype.Robot;
+import main.java.prototype.Trader;
+import main.java.prototype.Warrior;
+
 /**
  * A beehive consists of a network of interconnected rooms where
  * Bees are spawned and trained in their native discipline. The Bees
@@ -28,14 +34,38 @@ public class Beehive {
         }
     }
     
-    public void addBees(int amount, BeeSpecies species) {
+    public void addBees(int amount, Bee type) {
+        Bee temp;
+        
+        switch(type.getSpecies()) {
+            case FARMER: { 
+                temp = new Farmer();
+                break;
+            }
+            case ROBOT: { 
+                temp = new Robot();
+                break;
+            }
+            case WARRIOR: { 
+                temp = new Warrior();
+                break;
+            }
+            case TRADER: { 
+                temp = new Trader();
+                break;
+            }
+            default: {
+                temp = new Trader();
+            }
+        }
+        
         for (int i=0; i<amount; i++) {
-            _bees.add(new Bee(species));
+            _bees.add((Bee)temp.clone());
         }
     }
     
-    public void addQueen(BeeSpecies species) {
-        _queen = new Bee(species);
+    public void addQueen(Bee queen) {
+        _queen = queen;
         _queen.makeQueen(true);
     }
     

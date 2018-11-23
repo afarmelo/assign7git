@@ -1,7 +1,8 @@
 package main.java.builder;
 
-import main.java.BeeSpecies;
 import main.java.Beehive;
+import main.java.prototype.Bee;
+import main.java.prototype.Trader;
 
 /**
  * Trader Bees are a peaceful roaming type. They barter and trade
@@ -22,12 +23,12 @@ public class TraderBeehiveBuilder extends BeehiveBuilder {
 
     @Override
     public void AddBees() {
-        _hive.addBees(30, BeeSpecies.TRADER);
+        Bee trader = new Trader();
+        _hive.addBees(30, trader);
     }
 
     @Override
     public void AddQueen() {
-        // TODO Auto-generated method stub
-        _hive.addQueen(BeeSpecies.TRADER);
+        _hive.addQueen(new Trader());
     }
 }

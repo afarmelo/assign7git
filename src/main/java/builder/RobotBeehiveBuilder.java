@@ -1,7 +1,8 @@
 package main.java.builder;
 
 import main.java.Beehive;
-import main.java.BeeSpecies;
+import main.java.prototype.Bee;
+import main.java.prototype.Robot;
 
 /**
  * The Robot Bees have little need for rest, being able to operate 
@@ -27,11 +28,12 @@ public class RobotBeehiveBuilder extends BeehiveBuilder {
 
     @Override
     public void AddBees() {
-        _hive.addBees(15, BeeSpecies.ROBOT);
+        Bee robot = new Robot();
+        _hive.addBees(15, robot);
     }
 
     @Override
     public void AddQueen() {
-        _hive.addQueen(BeeSpecies.ROBOT);
+        _hive.addQueen(new Robot());
     }
 }

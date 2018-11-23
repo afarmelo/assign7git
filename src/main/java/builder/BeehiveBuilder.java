@@ -10,6 +10,15 @@ package main.java.builder;
 public abstract class BeehiveBuilder {
 
     public abstract void AddRooms();
+    
+    /**
+     * Adding bees on creation of a beehive is a simple operation thanks
+     * to the prototype pattern. One bee of a certain type is created, then
+     * using that bee, it's passed into the beehive class where it is cloned 
+     * multiple times to fill the hive.
+     */
     public abstract void AddBees();
+    
+    
     public abstract void AddQueen();
 }
