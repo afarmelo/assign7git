@@ -15,10 +15,11 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("Hello from Main!");
-        SingletonMain.main();
-        BuilderMain.main();
+        System.out.println("\nDesign patterns application starting... ");
+        SingletonMain.main(args);
+        BuilderMain.main(args);
         DecoratorMain.main();
         PrototypeMain.main();
+        System.out.println("\n....Design patterns application finished.\n");
     }
 }
