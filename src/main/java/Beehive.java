@@ -72,7 +72,8 @@ public class Beehive {
     @Override
     public String toString() {
         String out = "";
-        out+=("This beehive has " + _bees.size() + " bees,\n");
+        out+=("This beehive is a " + _bees.get(0).getSpecies() + " hive.\n");
+        out+=("There are " + _bees.size() + " bees,\n");
         out+=(_spawners.size() + " rooms,\n");
         out+=("and ");
         if (_queen != null) {
