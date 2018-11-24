@@ -29,4 +29,8 @@ public class Apiary {
     public void spawnHive(Beehive toAdd) {
         _hives.add(toAdd);
     }
+    
+    public int getHives() {
+        return _hives.size();
+    }
 }
