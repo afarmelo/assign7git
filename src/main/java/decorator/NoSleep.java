@@ -2,19 +2,19 @@ package main.java.decorator;
 
 import main.java.prototype.BeeBase;
 
-public class NoSleep extends BeeDecoratorBase{
+public class NoSleep extends BeeDecoratorBase {
 
-    private int _sleepBuff;
+    private int sleepBuff;
     
     public NoSleep(BeeBase bee) {
         super(bee);
-        _sleepBuff=2;
+        sleepBuff = 2;
     }
 
     @Override
     public int getRestTime() {
-        int rest = _bee.getRestTime();
-        rest-=_sleepBuff;
+        int rest = bee.getRestTime();
+        rest -= sleepBuff;
         return rest;
     }
 }

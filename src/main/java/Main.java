@@ -1,8 +1,10 @@
 package main.java;
+
 import main.java.builder.BuilderMain;
 import main.java.decorator.DecoratorMain;
 import main.java.prototype.PrototypeMain;
 import main.java.singleton.SingletonMain;
+
 /**
  * Here is the entry point into the Design Patterns assignment.
  * 
@@ -11,8 +13,8 @@ import main.java.singleton.SingletonMain;
 public class Main {
 
     /**
-     * main method runs all mains from the other packages
-     * @param args
+     * main method runs all mains from the other packages.
+     * @param args parameters for execution
      */
     public static void main(String[] args) {
         System.out.println("\nDesign patterns application starting... ");

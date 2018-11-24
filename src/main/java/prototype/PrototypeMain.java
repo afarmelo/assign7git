@@ -5,6 +5,10 @@ import main.java.decorator.Haggle;
 
 public class PrototypeMain {
 
+    /**
+     * Entry point into the prototype package.
+     * @param args Execution parameters
+     */
     public static void main(String[] args) {
         System.out.println("\nPrototypeMain running...");
         System.out.println("Creating a Farmer Bee");

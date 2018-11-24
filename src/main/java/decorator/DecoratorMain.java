@@ -4,12 +4,16 @@ import main.java.prototype.Farmer;
 import main.java.prototype.Trader;
 
 /**
- * DecoratorMain is the entry point into the Decorator pattern
+ * DecoratorMain is the entry point into the Decorator pattern.
  * @author Adam Farmelo
  *
  */
 public class DecoratorMain {
 
+    /**
+     * Entry point into the decorator package.
+     * @param args Execution parameters
+     */
     public static void main(String[] args) {
         System.out.println("\nDecoratorMain running...");
         
@@ -22,16 +26,16 @@ public class DecoratorMain {
         
         // create decorators
         FastHarvest farmerJohn = new FastHarvest(john);
-        System.out.println("Farmer John with fastHarvest decorator: \n" + 
-                farmerJohn.toString());
+        System.out.println("Farmer John with fastHarvest decorator: \n"
+                + farmerJohn.toString());
         
         Haggle traderJoe = new Haggle(joe);
-        System.out.println("Trader Joe with haggle decorator: \n" + 
-                traderJoe.toString());
+        System.out.println("Trader Joe with haggle decorator: \n"
+                + traderJoe.toString());
         
         NoSleep talentedJoe = new NoSleep(traderJoe);
-        System.out.println("Trader Joe with haggle and noSleep decorator: \n" +
-                talentedJoe.toString());
+        System.out.println("Trader Joe with haggle and noSleep decorator: \n"
+                + talentedJoe.toString());
         
         System.out.println("...DecoratorMain finished.\n");
     }

@@ -12,45 +12,49 @@ import main.java.BeeSpecies;
  * @version 0.1
  *
  */
-public abstract class BeeBase implements Cloneable{
+public abstract class BeeBase implements Cloneable {
     
-    protected boolean _isQueen = false;
-    protected boolean _alive = true;
-    protected int _harvestSpeed = 10;
-    protected int _restTime = 10;
-    protected int _damage = 10;
-    protected int _health = 100;
-    protected int _discount = 0;
-    protected BeeSpecies _species;
+    protected boolean isQueen = false;
+    protected boolean alive = true;
+    protected int harvestSpeed = 10;
+    protected int restTime = 10;
+    protected int damage = 10;
+    protected int health = 100;
+    protected int discount = 0;
+    protected BeeSpecies species;
     
     public BeeBase(BeeSpecies species) {
-        _species = species;
+        this.species = species;
     }
     
     public int getHarvestSpeed() {
-        return _harvestSpeed;
+        return harvestSpeed;
     }
     
     public int getRestTime() {
-        return _restTime;
+        return restTime;
     }
     
     public int getDamage() {
-        return _damage;
+        return damage;
     }
     
     public int getHealth() {
-        return _health;
+        return health;
     }
     
     public int getDiscount() {
-        return _discount;
+        return discount;
     }
     
     public BeeSpecies getSpecies() {
-        return _species;
+        return species;
     }
     
+    /**
+     * Return a clone of this object.
+     */
+    @Override
     public Object clone() {
         Object clone = null;
         try {
@@ -63,26 +67,26 @@ public abstract class BeeBase implements Cloneable{
     }
     
     public void makeQueen(boolean isQueen) {
-        _isQueen = isQueen;
+        this.isQueen = isQueen;
     }
     
     public boolean isQueen() {
-        return _isQueen;
+        return isQueen;
     }
     
     public boolean isAlive() {
-        return _alive;
+        return alive;
     }
     
     @Override
     public String toString() {
         String out = "";
-        out+="This Bees attributes:\n";
-        out+="Harvest Speed: " + getHarvestSpeed() + "\n";
-        out+="Rest Time: " + getRestTime() + "\n";
-        out+="Damage: " + getDamage() + "\n";
-        out+="Health: " + getHealth() + "\n";
-        out+="Trading discount: " + getDiscount() + "%\n";
+        out += "This Bees attributes:\n";
+        out += "Harvest Speed: " + getHarvestSpeed() + "\n";
+        out += "Rest Time: " + getRestTime() + "\n";
+        out += "Damage: " + getDamage() + "\n";
+        out += "Health: " + getHealth() + "\n";
+        out += "Trading discount: " + getDiscount() + "%\n";
         return out;
     }
 }

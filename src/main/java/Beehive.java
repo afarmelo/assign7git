@@ -19,25 +19,36 @@ import main.java.prototype.Warrior;
  */
 public class Beehive {
 
-    private ArrayList<BeeBase> _bees;
-    private ArrayList<Room> _spawners;
-    private BeeBase _queen;
+    private ArrayList<BeeBase> bees;
+    private ArrayList<Room> spawners;
+    private BeeBase queen;
     
     public Beehive() {
-        _bees = new ArrayList<BeeBase>();
-        _spawners = new ArrayList<Room>();
+        bees = new ArrayList<BeeBase>();
+        spawners = new ArrayList<Room>();
     }
     
+    /**
+     * Add a number of rooms to a beehive, where each room takes a specific
+     * number of ticks to spawn a single Bee.
+     * @param amount amount of rooms to add
+     * @param ticks number of ticks for a room to spawn a Bee
+     */
     public void addRooms(int amount, int ticks) {
-        for (int i=0; i<amount; i++) {
-            _spawners.add(new Room(ticks));
+        for (int i = 0; i < amount; i++) {
+            spawners.add(new Room(ticks));
         }
     }
     
+    /**
+     * Add a number of bees of a certain type to the hive.
+     * @param amount amount of bees to add to the hive
+     * @param type the type or BeeSpecies of the Bee
+     */
     public void addBees(int amount, BeeBase type) {
         BeeBase temp;
         
-        switch(type.getSpecies()) {
+        switch (type.getSpecies()) {
             case FARMER: { 
                 temp = new Farmer();
                 break;
@@ -59,43 +70,44 @@ public class Beehive {
             }
         }
         
-        for (int i=0; i<amount; i++) {
-            _bees.add((BeeBase)temp.clone());
+        for (int i = 0; i < amount; i++) {
+            bees.add((BeeBase)temp.clone());
         }
     }
     
     public void addQueen(BeeBase queen) {
-        _queen = queen;
-        _queen.makeQueen(true);
+        this.queen = queen;
+        queen.makeQueen(true);
     }
     
     public ArrayList<BeeBase> getBees() {
-        return _bees;
+        return bees;
     }
     
     @Override
     public String toString() {
         String out = "";
-        out+=("This beehive is a " + _bees.get(0).getSpecies() + " hive.\n");
-        out+=("There are " + _bees.size() + " bees,\n");
-        out+=(_spawners.size() + " rooms,\n");
-        out+=("and");
-        if (_queen != null) {
-            out+=(" a queen.");
+        out += ("This beehive is a " + bees.get(0).getSpecies() + " hive.\n");
+        out += ("There are " + bees.size() + " bees,\n");
+        out += (spawners.size() + " rooms,\n");
+        out += ("and");
+        if (queen != null) {
+            out += (" a queen.");
         } else {
-            out+=(" no queen.");
+            out += (" no queen.");
         }
         return out;
     }
     
     private class Room {
-        private int _ticksToBuild;
+        private int ticksToBuild;
+        
         private Room(int ticks) {
-            _ticksToBuild = ticks;
+            ticksToBuild = ticks;
         }
         
         public void setTicks(int ticks) {
-            _ticksToBuild = ticks;
+            ticksToBuild = ticks;
         }
     }
 }

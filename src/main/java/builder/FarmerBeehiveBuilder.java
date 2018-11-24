@@ -16,31 +16,31 @@ import main.java.prototype.Farmer;
  */
 public class FarmerBeehiveBuilder extends BeehiveBuilder {
 
-    private Beehive _hive;
+    private Beehive hive;
     
     public FarmerBeehiveBuilder() {
-        _hive = new Beehive();
+        hive = new Beehive();
     }
     
     @Override
     public void addRooms() {
-        _hive.addRooms(50, 8);
+        hive.addRooms(50, 8);
     }
 
     @Override
     public void addBees() {
         BeeBase farmer = new Farmer();
-        _hive.addBees(30, farmer);
+        hive.addBees(30, farmer);
     }
 
     @Override
     public void addQueen() {
-        _hive.addQueen(new Farmer());
+        hive.addQueen(new Farmer());
     }
 
     @Override
     public Beehive getHive() {
-        return _hive;
+        return hive;
     }
 
 }

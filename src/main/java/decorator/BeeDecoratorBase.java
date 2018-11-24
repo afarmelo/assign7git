@@ -5,41 +5,41 @@ import main.java.prototype.BeeBase;
 
 public abstract class BeeDecoratorBase extends BeeBase {
     
-    protected BeeBase _bee;
+    protected BeeBase bee;
     
     public BeeDecoratorBase(BeeBase bee) {
         super(BeeSpecies.BASE);
-        _bee = bee;
+        this.bee = bee;
     }
     
     @Override
     public int getHarvestSpeed() {
-        return _bee.getHarvestSpeed();
+        return bee.getHarvestSpeed();
     }
     
     @Override
     public int getRestTime() {
-        return _bee.getRestTime();
+        return bee.getRestTime();
     }
     
     @Override
     public int getDamage() {
-        return _bee.getDamage();
+        return bee.getDamage();
     }
     
     @Override
     public int getHealth() {
-        return _bee.getHealth();
+        return bee.getHealth();
     }
     
     @Override
     public int getDiscount() {
-        return _bee.getDiscount();
+        return bee.getDiscount();
     }
     
     @Override
     public BeeSpecies getSpecies() {
-        return _bee.getSpecies();
+        return bee.getSpecies();
     }
 
 }

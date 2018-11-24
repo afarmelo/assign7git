@@ -11,6 +11,10 @@ package main.java.builder;
  */
 public class BeehiveDirector {
 
+    /**
+     * Tell the BeehiveBuilder to build a hive.
+     * @param bhBuilder the builder which will be building a hive
+     */
     public void buildHive(BeehiveBuilder bhBuilder) {
         bhBuilder.addRooms();
         bhBuilder.addBees();

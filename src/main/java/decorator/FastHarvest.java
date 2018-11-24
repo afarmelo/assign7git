@@ -2,19 +2,19 @@ package main.java.decorator;
 
 import main.java.prototype.BeeBase;
 
-public class FastHarvest extends BeeDecoratorBase{
+public class FastHarvest extends BeeDecoratorBase {
 
-    private int _harvBuff;
+    private int harvBuff;
     
     public FastHarvest(BeeBase bee) {
         super(bee);
-        _harvBuff = 2;
+        harvBuff = 2;
     }
     
     @Override
     public int getHarvestSpeed() {
-        int harvestSpeed = _bee.getHarvestSpeed();
-        harvestSpeed-=_harvBuff;
+        int harvestSpeed = bee.getHarvestSpeed();
+        harvestSpeed -= harvBuff;
         return harvestSpeed;
     }
 }

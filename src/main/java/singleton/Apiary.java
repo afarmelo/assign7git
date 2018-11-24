@@ -13,12 +13,17 @@ import main.java.Beehive;
 public class Apiary {
 
     private static Apiary _instance;
-    private ArrayList<Beehive> _hives;
+    private ArrayList<Beehive> hives;
     
     private Apiary() {
-        _hives = new ArrayList<Beehive>();
+        hives = new ArrayList<Beehive>();
     }
     
+    /**
+     * Return the singleton instance of the Apiary class since it cannot
+     * be instantiated directly except internally.
+     * @return an instance of the Apiary class
+     */
     public static Apiary getInstance() {
         if (_instance == null) {
             _instance = new Apiary();
@@ -27,10 +32,10 @@ public class Apiary {
     }
     
     public void spawnHive(Beehive toAdd) {
-        _hives.add(toAdd);
+        hives.add(toAdd);
     }
     
     public int getHives() {
-        return _hives.size();
+        return hives.size();
     }
 }
