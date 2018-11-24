@@ -18,21 +18,30 @@ import main.java.prototype.Warrior;
  */
 public class WarriorBeehiveBuilder extends BeehiveBuilder {
 
-    private Beehive _hive = new Beehive();
+    private Beehive _hive;
+    
+    public WarriorBeehiveBuilder() {
+        _hive = new Beehive();
+    }
 
     @Override
-    public void AddRooms() {
+    public void addRooms() {
         _hive.addRooms(50, 8);
     }
     
     @Override
-    public void AddBees() {
+    public void addBees() {
         Bee warrior = new Warrior();
         _hive.addBees(30, warrior);
     }
 
     @Override
-    public void AddQueen() {
+    public void addQueen() {
         _hive.addQueen(new Warrior());
+    }
+    
+    @Override
+    public Beehive getHive() {
+        return _hive;
     }
 }

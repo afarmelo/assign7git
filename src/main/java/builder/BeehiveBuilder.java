@@ -1,5 +1,7 @@
 package main.java.builder;
 
+import main.java.Beehive;
+
 /**
  * The BeehiveBuilder is the abstract builder class which all builders
  * inherit from. 
@@ -9,7 +11,7 @@ package main.java.builder;
  */
 public abstract class BeehiveBuilder {
 
-    public abstract void AddRooms();
+    public abstract void addRooms();
     
     /**
      * Adding bees on creation of a beehive is a simple operation thanks
@@ -17,8 +19,10 @@ public abstract class BeehiveBuilder {
      * using that bee, it's passed into the beehive class where it is cloned 
      * multiple times to fill the hive.
      */
-    public abstract void AddBees();
+    public abstract void addBees();
     
     
-    public abstract void AddQueen();
+    public abstract void addQueen();
+    
+    public abstract Beehive getHive();
 }

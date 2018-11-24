@@ -14,21 +14,30 @@ import main.java.prototype.Trader;
  */
 public class TraderBeehiveBuilder extends BeehiveBuilder {
 
-    private Beehive _hive = new Beehive();
+    private Beehive _hive;
+    
+    public TraderBeehiveBuilder() {
+        _hive = new Beehive();
+    }
 
     @Override
-    public void AddRooms() {
+    public void addRooms() {
         _hive.addRooms(40, 8);
     }
 
     @Override
-    public void AddBees() {
+    public void addBees() {
         Bee trader = new Trader();
         _hive.addBees(30, trader);
     }
 
     @Override
-    public void AddQueen() {
+    public void addQueen() {
         _hive.addQueen(new Trader());
+    }
+    
+    @Override
+    public Beehive getHive() {
+        return _hive;
     }
 }

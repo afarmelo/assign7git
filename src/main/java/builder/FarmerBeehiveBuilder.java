@@ -1,8 +1,5 @@
 package main.java.builder;
 
-import java.util.ArrayList;
-
-import main.java.BeeSpecies;
 import main.java.Beehive;
 import main.java.prototype.Bee;
 import main.java.prototype.Farmer;
@@ -19,22 +16,31 @@ import main.java.prototype.Farmer;
  */
 public class FarmerBeehiveBuilder extends BeehiveBuilder {
 
-    private Beehive _hive = new Beehive();
+    private Beehive _hive;
+    
+    public FarmerBeehiveBuilder() {
+        _hive = new Beehive();
+    }
     
     @Override
-    public void AddRooms() {
+    public void addRooms() {
         _hive.addRooms(50, 8);
     }
 
     @Override
-    public void AddBees() {
+    public void addBees() {
         Bee farmer = new Farmer();
         _hive.addBees(30, farmer);
     }
 
     @Override
-    public void AddQueen() {
+    public void addQueen() {
         _hive.addQueen(new Farmer());
+    }
+
+    @Override
+    public Beehive getHive() {
+        return _hive;
     }
 
 }

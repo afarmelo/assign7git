@@ -19,21 +19,30 @@ import main.java.prototype.Robot;
  */
 public class RobotBeehiveBuilder extends BeehiveBuilder {
 
-    private Beehive _hive = new Beehive();
+    private Beehive _hive;
+    
+    public RobotBeehiveBuilder() { 
+        _hive = new Beehive();
+    }
 
     @Override
-    public void AddRooms() {
+    public void addRooms() {
         _hive.addRooms(40, 2);
     }
 
     @Override
-    public void AddBees() {
+    public void addBees() {
         Bee robot = new Robot();
         _hive.addBees(15, robot);
     }
 
     @Override
-    public void AddQueen() {
+    public void addQueen() {
         _hive.addQueen(new Robot());
+    }
+    
+    @Override
+    public Beehive getHive() {
+        return _hive;
     }
 }
