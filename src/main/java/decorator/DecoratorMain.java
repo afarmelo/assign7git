@@ -10,7 +10,7 @@ import main.java.prototype.Trader;
  */
 public class DecoratorMain {
 
-    public static void main() {
+    public static void main(String[] args) {
         System.out.println("\nDecoratorMain running...");
         
         // create two bees   

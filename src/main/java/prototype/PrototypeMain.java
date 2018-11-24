@@ -5,7 +5,7 @@ import main.java.decorator.Haggle;
 
 public class PrototypeMain {
 
-    public static void main() {
+    public static void main(String[] args) {
         System.out.println("\nPrototypeMain running...");
         System.out.println("Creating a Farmer Bee");
         

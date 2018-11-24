@@ -18,8 +18,8 @@ public class Main {
         System.out.println("\nDesign patterns application starting... ");
         SingletonMain.main(args);
         BuilderMain.main(args);
-        DecoratorMain.main();
-        PrototypeMain.main();
+        DecoratorMain.main(args);
+        PrototypeMain.main(args);
         System.out.println("\n....Design patterns application finished.\n");
     }
 }
