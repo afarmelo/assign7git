@@ -75,11 +75,11 @@ public class Beehive {
         out+=("This beehive is a " + _bees.get(0).getSpecies() + " hive.\n");
         out+=("There are " + _bees.size() + " bees,\n");
         out+=(_spawners.size() + " rooms,\n");
-        out+=("and ");
+        out+=("and");
         if (_queen != null) {
-            out+=(" a queen.\n");
+            out+=(" a queen.");
         } else {
-            out+=(" no queen.\n");
+            out+=(" no queen.");
         }
         return out;
     }
