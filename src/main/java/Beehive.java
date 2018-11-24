@@ -69,6 +69,20 @@ public class Beehive {
         _queen.makeQueen(true);
     }
     
+    @Override
+    public String toString() {
+        String out = "";
+        out+=("This beehive has " + _bees.size() + " bees,\n");
+        out+=(_spawners.size() + " rooms,\n");
+        out+=("and ");
+        if (_queen != null) {
+            out+=(" a queen.\n");
+        } else {
+            out+=(" no queen.\n");
+        }
+        return out;
+    }
+    
     private class Room {
         private int _ticksToBuild;
         private Room(int ticks) {
