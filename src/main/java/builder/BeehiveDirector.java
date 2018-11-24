@@ -12,8 +12,8 @@ package main.java.builder;
 public class BeehiveDirector {
 
     public void buildHive(BeehiveBuilder bhBuilder) {
-        bhBuilder.AddRooms();
-        bhBuilder.AddBees();
-        bhBuilder.AddQueen();
+        bhBuilder.addRooms();
+        bhBuilder.addBees();
+        bhBuilder.addQueen();
     }
 }
