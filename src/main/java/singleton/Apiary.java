@@ -12,14 +12,14 @@ import main.java.Beehive;
  */
 public class Apiary {
 
-    private Apiary _instance;
+    private static Apiary _instance;
     private ArrayList<Beehive> _hives;
     
     private Apiary() {
         _hives = new ArrayList<Beehive>();
     }
     
-    public Apiary getInstance() {
+    public static Apiary getInstance() {
         if (_instance == null) {
             _instance = new Apiary();
         }
