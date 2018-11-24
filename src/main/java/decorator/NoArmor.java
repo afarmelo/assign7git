@@ -1,25 +1,20 @@
 package main.java.decorator;
 
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 
-public class NoArmor extends Decorator {
+public class NoArmor extends BeeDecoratorBase {
 
     private int _armorDebuff;
     
-    public NoArmor(Bee bee) {
+    public NoArmor(BeeBase bee) {
         super(bee);
+        _armorDebuff = 20;
     }
     
     @Override
-    public int health() {
-        return super._bee.health()-_armorDebuff;
-    }
-    
-    public int getArmorDebuff() {
-        return _armorDebuff;
-    }
-    
-    public void setArmorDebuff(int debuff) {
-        _armorDebuff = debuff;
+    public int getHealth() {
+        int health = _bee.getHealth();
+        health-=_armorDebuff;
+        return health;
     }
 }

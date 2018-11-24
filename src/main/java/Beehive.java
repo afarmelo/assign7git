@@ -2,7 +2,7 @@ package main.java;
 
 import java.util.ArrayList;
 
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 import main.java.prototype.Farmer;
 import main.java.prototype.Robot;
 import main.java.prototype.Trader;
@@ -19,12 +19,12 @@ import main.java.prototype.Warrior;
  */
 public class Beehive {
 
-    private ArrayList<Bee> _bees;
+    private ArrayList<BeeBase> _bees;
     private ArrayList<Room> _spawners;
-    private Bee _queen;
+    private BeeBase _queen;
     
     public Beehive() {
-        _bees = new ArrayList<Bee>();
+        _bees = new ArrayList<BeeBase>();
         _spawners = new ArrayList<Room>();
     }
     
@@ -34,8 +34,8 @@ public class Beehive {
         }
     }
     
-    public void addBees(int amount, Bee type) {
-        Bee temp;
+    public void addBees(int amount, BeeBase type) {
+        BeeBase temp;
         
         switch(type.getSpecies()) {
             case FARMER: { 
@@ -60,13 +60,17 @@ public class Beehive {
         }
         
         for (int i=0; i<amount; i++) {
-            _bees.add((Bee)temp.clone());
+            _bees.add((BeeBase)temp.clone());
         }
     }
     
-    public void addQueen(Bee queen) {
+    public void addQueen(BeeBase queen) {
         _queen = queen;
         _queen.makeQueen(true);
+    }
+    
+    public ArrayList<BeeBase> getBees() {
+        return _bees;
     }
     
     @Override

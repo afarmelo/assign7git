@@ -1,7 +1,7 @@
 package main.java.builder;
 
 import main.java.Beehive;
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 import main.java.prototype.Warrior;
 
 /**
@@ -31,7 +31,7 @@ public class WarriorBeehiveBuilder extends BeehiveBuilder {
     
     @Override
     public void addBees() {
-        Bee warrior = new Warrior();
+        BeeBase warrior = new Warrior();
         _hive.addBees(30, warrior);
     }
 

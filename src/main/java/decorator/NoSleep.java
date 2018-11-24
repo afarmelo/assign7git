@@ -1,25 +1,20 @@
 package main.java.decorator;
 
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 
-public class NoSleep extends Decorator{
+public class NoSleep extends BeeDecoratorBase{
 
-    private int _sleepDebuff;
+    private int _sleepBuff;
     
-    public NoSleep(Bee bee) {
+    public NoSleep(BeeBase bee) {
         super(bee);
+        _sleepBuff=2;
     }
 
     @Override
-    public int restTime() {
-        return super._bee.restTime() - _sleepDebuff;
-    }
-    
-    public int getSleepDebuff() {
-        return _sleepDebuff;
-    }
-    
-    public void setSleepDebuff(int debuff) {
-        _sleepDebuff = debuff;
+    public int getRestTime() {
+        int rest = _bee.getRestTime();
+        rest-=_sleepBuff;
+        return rest;
     }
 }

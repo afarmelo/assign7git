@@ -2,14 +2,9 @@ package main.java.prototype;
 
 import main.java.BeeSpecies;
 
-public class Trader extends Bee{
-
-    public Trader() {
-        _species = BeeSpecies.TRADER;
-    }
+public class Trader extends BeeBase{
     
-    @Override
-    public void fight(Bee other) {
-        
+    public Trader() {
+        super(BeeSpecies.TRADER);
     }
 }

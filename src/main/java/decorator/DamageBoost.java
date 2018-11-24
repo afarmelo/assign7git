@@ -1,25 +1,20 @@
 package main.java.decorator;
 
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 
-public class DamageBoost extends Decorator{
+public class DamageBoost extends BeeDecoratorBase{
 
     private int _dmgBuff;
     
-    public DamageBoost(Bee bee) {
+    public DamageBoost(BeeBase bee) {
         super(bee);
+        _dmgBuff = 20;
     }
     
     @Override
-    public int damage() {
-        return super._bee.damage() + _dmgBuff;
-    }
-    
-    public int getDamageBoost() {
-        return _dmgBuff;
-    }
-    
-    public void setDamageBoost(int buff) {
-        _dmgBuff = buff;
+    public int getDamage() {
+        int dmg = _bee.getDamage();
+        dmg+=_dmgBuff;
+        return dmg;
     }
 }

@@ -1,7 +1,7 @@
 package main.java.builder;
 
 import main.java.Beehive;
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 import main.java.prototype.Trader;
 
 /**
@@ -27,7 +27,7 @@ public class TraderBeehiveBuilder extends BeehiveBuilder {
 
     @Override
     public void addBees() {
-        Bee trader = new Trader();
+        BeeBase trader = new Trader();
         _hive.addBees(30, trader);
     }
 

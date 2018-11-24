@@ -1,25 +1,20 @@
 package main.java.decorator;
 
-import main.java.prototype.Bee;
+import main.java.prototype.BeeBase;
 
-public class Haggle extends Decorator{
+public class Haggle extends BeeDecoratorBase{
 
     private int _discount;
     
-    public Haggle(Bee bee) {
+    public Haggle(BeeBase bee) {
         super(bee);
+        _discount = 20;
     }
 
     @Override
-    public int discount() {
-        return super._bee.discount()-_discount;
-    }
-    
     public int getDiscount() {
-        return _discount;
-    }
-    
-    public void setDiscount(int discount) {
-        _discount = discount;
+        int discount = _bee.getDiscount();
+        discount+=_discount;
+        return discount;
     }
 }

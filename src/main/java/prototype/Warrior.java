@@ -2,15 +2,9 @@ package main.java.prototype;
 
 import main.java.BeeSpecies;
 
-public class Warrior extends Bee{
-
-    public Warrior() {
-        _species = BeeSpecies.WARRIOR;
-    }
+public class Warrior extends BeeBase{
     
-    @Override
-    public void fight(Bee other) {
-        
+    public Warrior() {
+        super(BeeSpecies.WARRIOR);
     }
 }
-

@@ -8,5 +8,5 @@ package main.java;
  *
  */
 public enum BeeSpecies {
-    WARRIOR, FARMER, TRADER, ROBOT
+    WARRIOR, FARMER, TRADER, ROBOT, BASE
 }
