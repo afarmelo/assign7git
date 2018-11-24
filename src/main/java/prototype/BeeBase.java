@@ -1,7 +1,6 @@
 package main.java.prototype;
 
 import main.java.BeeSpecies;
-import main.java.decorator.FastHarvest;
 
 /**
  * Bees live in beehives, and are of a specific 'species' 
