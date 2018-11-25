@@ -38,4 +38,9 @@ public class Apiary {
     public ArrayList<Beehive> getHives() {
         return hives;
     }
+    
+    public void clean() {
+        hives = null;
+        _instance = null;
+    }
 }

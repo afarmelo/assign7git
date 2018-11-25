@@ -41,6 +41,8 @@ public class SingletonTest {
         // check that both references point to an apiary with 2 beehives
         assertEquals(2, apiary.getHives().size());
         assertEquals(2, instance.getHives().size());
+        
+        apiary.clean();
     }
 
 }
