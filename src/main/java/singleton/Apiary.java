@@ -35,7 +35,7 @@ public class Apiary {
         hives.add(toAdd);
     }
     
-    public int getHives() {
-        return hives.size();
+    public ArrayList<Beehive> getHives() {
+        return hives;
     }
 }

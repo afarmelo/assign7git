@@ -21,11 +21,13 @@ public class Beehive {
 
     private ArrayList<BeeBase> bees;
     private ArrayList<Room> spawners;
+    private BeeSpecies type;
     private BeeBase queen;
     
     public Beehive() {
         bees = new ArrayList<BeeBase>();
         spawners = new ArrayList<Room>();
+        type = null;
     }
     
     /**
@@ -45,33 +47,42 @@ public class Beehive {
      * @param amount amount of bees to add to the hive
      * @param type the type or BeeSpecies of the Bee
      */
-    public void addBees(int amount, BeeBase type) {
+    public void addBees(int amount, BeeBase type) throws UnsupportedOperationException {
         BeeBase temp;
+        BeeSpecies paramSpecies = type.getSpecies();
         
-        switch (type.getSpecies()) {
-            case FARMER: { 
-                temp = new Farmer();
-                break;
-            }
-            case ROBOT: { 
-                temp = new Robot();
-                break;
-            }
-            case WARRIOR: { 
-                temp = new Warrior();
-                break;
-            }
-            case TRADER: { 
-                temp = new Trader();
-                break;
-            }
-            default: {
-                temp = new Trader();
-            }
-        }
+        if (this.type == null) {
+            this.type = paramSpecies;
+        } 
         
-        for (int i = 0; i < amount; i++) {
-            bees.add((BeeBase)temp.clone());
+        if (this.type != paramSpecies) {
+            throw new UnsupportedOperationException("This species of bee can not be added");
+        }  else {
+            switch (paramSpecies) {
+                case FARMER: { 
+                    temp = new Farmer();
+                    break;
+                }
+                case ROBOT: { 
+                    temp = new Robot();
+                    break;
+                }
+                case WARRIOR: { 
+                    temp = new Warrior();
+                    break;
+                }
+                case TRADER: { 
+                    temp = new Trader();
+                    break;
+                }
+                default: {
+                    temp = new Trader();
+                }
+            }
+            
+            for (int i = 0; i < amount; i++) {
+                bees.add((BeeBase)temp.clone());
+            }
         }
     }
     
@@ -84,17 +95,30 @@ public class Beehive {
         return bees;
     }
     
+    public ArrayList<Room> getRooms() {
+        return spawners;
+    }
+    
+    public BeeSpecies getSpecies() {
+        return type;
+    }
+    
     @Override
     public String toString() {
         String out = "";
-        out += ("This beehive is a " + bees.get(0).getSpecies() + " hive.\n");
-        out += ("There are " + bees.size() + " bees,\n");
-        out += (spawners.size() + " rooms,\n");
-        out += ("and");
-        if (queen != null) {
-            out += (" a queen.");
+        
+        if (bees.size() == 0) {
+            out += ("This is an empty hive.\n");
         } else {
-            out += (" no queen.");
+            out += ("This beehive is a " + bees.get(0).getSpecies() + " hive.\n");
+            out += ("There are " + bees.size() + " bees,\n");
+            out += (spawners.size() + " rooms,\n");
+            out += ("and");
+            if (queen != null) {
+                out += (" a queen.");
+            } else {
+                out += (" no queen.");
+            }
         }
         return out;
     }
@@ -103,10 +127,6 @@ public class Beehive {
         private int ticksToBuild;
         
         private Room(int ticks) {
-            ticksToBuild = ticks;
-        }
-        
-        public void setTicks(int ticks) {
             ticksToBuild = ticks;
         }
     }

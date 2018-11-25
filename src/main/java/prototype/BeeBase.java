@@ -70,6 +70,10 @@ public abstract class BeeBase implements Cloneable {
         this.isQueen = isQueen;
     }
     
+    public void kill(boolean isAlive) {
+        this.alive = isAlive;
+    }
+    
     public boolean isQueen() {
         return isQueen;
     }
