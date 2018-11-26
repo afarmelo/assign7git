@@ -52,6 +52,7 @@ public abstract class BeeBase implements Cloneable {
     }
     
     /**
+     * This is the part of the class which is directly related to the Prototype pattern.
      * Return a clone of this object.
      */
     @Override

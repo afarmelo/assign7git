@@ -2,6 +2,12 @@ package main.java.decorator;
 
 import main.java.prototype.BeeBase;
 
+/**
+ * FastHarvest is a decorator which buffs the harvest speed of a Bee.
+ * @author Adam Farmelo
+ * @version 0.1
+ *
+ */
 public class FastHarvest extends BeeDecoratorBase {
 
     private int harvBuff;

@@ -5,7 +5,8 @@ import main.java.Beehive;
 
 /**
  * The Apiary class is a Singleton in the Beehive simulator. 
- * Apiaries have beehives, which have rooms, which spawn bees.
+ * Apiaries have beehives, which have rooms, which spawn bees. The Singleton
+ * instance can be retrieved only through getInstance().
  * @author Adam Farmelo
  * @version 0.1
  *
@@ -20,6 +21,7 @@ public class Apiary {
     }
     
     /**
+     * SINGLETON.
      * Return the singleton instance of the Apiary class since it cannot
      * be instantiated directly except internally.
      * @return an instance of the Apiary class

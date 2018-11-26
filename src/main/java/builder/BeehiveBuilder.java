@@ -24,5 +24,10 @@ public abstract class BeehiveBuilder {
     
     public abstract void addQueen();
     
+    /**
+     * After a BeehiveBuilder is done creating a hive, the hive can be returned
+     * with this method.
+     * @return the Beehive which was created.
+     */
     public abstract Beehive getHive();
 }

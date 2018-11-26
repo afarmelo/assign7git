@@ -24,6 +24,9 @@ public class Beehive {
     private BeeSpecies type;
     private BeeBase queen;
     
+    /**
+     * Create a Beehive object.
+     */
     public Beehive() {
         bees = new ArrayList<BeeBase>();
         spawners = new ArrayList<Room>();
@@ -43,7 +46,9 @@ public class Beehive {
     }
     
     /**
-     * Add a number of bees of a certain type to the hive.
+     * Add a number of bees of a certain type to the hive. Only Bees which 
+     * are the same type as the Bees in the hive can be created/added. Note 
+     * the creation of bees is by cloning.
      * @param amount amount of bees to add to the hive
      * @param type the type or BeeSpecies of the Bee
      */
@@ -80,6 +85,7 @@ public class Beehive {
                 }
             }
             
+            // PROTOTYPE pattern here. Clone the Bees being put into the hive.
             for (int i = 0; i < amount; i++) {
                 bees.add((BeeBase)temp.clone());
             }
